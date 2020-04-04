@@ -29,4 +29,3 @@ class EnrollForDemo(models.Model):
     def __str__(self):
         return "{} - {} {}".format(str(self.id), self.first_name, self.last_name)
 
-
