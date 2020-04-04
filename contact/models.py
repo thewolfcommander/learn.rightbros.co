@@ -20,6 +20,7 @@ class EnrollForDemo(models.Model):
     about = models.TextField(null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    is_approved = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['first_name', 'last_name', 'father_name']
