@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #1b1940;
+    --orange: #de6161;
+    --maroon: #89253e;
+    --silver: #f2f2f2;
+}
+
+body {
+    background: var(--blue);
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Desktop view for navbar */
+
+.learn-navbar {
+    width: 100%;
+    background: var(--orange);
+    border-bottom: 1px solid var(--silver);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
