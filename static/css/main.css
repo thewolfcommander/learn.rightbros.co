@@ -21,7 +21,7 @@ body {
 
 .learn-navbar {
     width: 100%;
-    background: var(--orange);
+    background: var(--silver);
     border-bottom: 1px solid midnightblue;
     display: flex;
     justify-content: space-between;
@@ -50,6 +50,7 @@ body {
     text-decoration: none;
     color: var(--maroon);
     letter-spacing: -0.5px;
+    font-weight: bolder;
 }
 
 .learn-links li a:hover {
@@ -64,6 +65,7 @@ body {
     bottom: 0;
     right: 0;
     left: 0;
+    min-width: 200px;
     background: rgba(0,0,0,0);
     cursor: pointer;
 }
@@ -74,3 +76,65 @@ body {
     }
 }
 
+
+/* Mobile View of Navbar */
+
+@media (max-width: 675px) {
+    .learn-icon,
+    .learn-close-btn {
+        display: block;
+    }
+
+    .learn-icon {
+        position: absolute;
+        right: 24px;
+    }
+
+    .learn-links {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100;
+        right: -90%;
+        background: var(--silver);
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        z-index: 2;
+        transition: 0.3s ease-in-out;
+    }
+
+    .learn-links li {
+        margin-right: 0;
+        margin-bottom: 50px;
+        font-size: 1.5em;
+    }
+
+    .learn-close-btn {
+        position: absolute;
+        top: 24px;
+        right: -90vh;
+        color: var(--maroon);
+        font-size: 2em;
+        z-index: 3;
+        transition: 0.3s ease-in-out;
+    }
+
+    .learn-close-btn:hover {
+        color: var(--blue);
+        cursor: pointer;
+    }
+
+    .open .learn-links {
+        min-width: 80%;
+        right: 0;
+    }
+
+    .open .learn-close-btn {
+        right: 32px;
+    }
+
+    .open .learn-backdrop {
+        display: block;
+    }
+}
