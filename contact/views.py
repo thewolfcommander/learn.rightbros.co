@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from contact.forms import EnrollForDemoForm
+
 # Create your views here.
 def home(request):
     context = {}
@@ -7,7 +9,20 @@ def home(request):
 
 
 def enroll(request):
-    context = {}
+    if request.method == 'POST':
+        form = EnrollForDemoForm(request.POST or None)
+        if form.is_valid():
+            enroll = form.save(commit=False)
+            enroll.save()
+            return redirect('contact:social')
+
+        else:
+            return redirect('contact:enroll')
+    else:
+        form = EnrollForDemoForm()
+    context = {
+        'form': form
+    }
     return render(request, 'contact/enroll.html', context)
 
 

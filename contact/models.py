@@ -17,7 +17,6 @@ class EnrollForDemo(models.Model):
     father_name = models.CharField(max_length=255, null=True)
     mobile_number = models.CharField(max_length=10, null=True)
     student = models.CharField(max_length=124, null=True, choices=STUDENT_CHOICES, default="school")
-    about = models.TextField(null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     is_approved = models.BooleanField(default=False)
