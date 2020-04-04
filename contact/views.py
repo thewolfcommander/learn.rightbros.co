@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from contact.forms import EnrollForDemoForm
 
@@ -15,9 +15,6 @@ def enroll(request):
             enroll = form.save(commit=False)
             enroll.save()
             return redirect('contact:social')
-
-        else:
-            return redirect('contact:enroll')
     else:
         form = EnrollForDemoForm()
     context = {
